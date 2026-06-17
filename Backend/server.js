@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(cors({
     origin: [
-        "https://atividade-pratica-sistema-cadastro.vercel.app/"
+        "https://atividade-pratica-sistema-cadastro-autenticacao-h05tuvqfq.vercel.app/"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
