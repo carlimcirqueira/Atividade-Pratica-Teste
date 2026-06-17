@@ -18,7 +18,7 @@ app.use(express.json());
 
 
 const corsOptions = {
-  origin: "https://atividade-pratica-sistema-cadastro.vercel.app",
+  origin: "https://atividade-pratica-sistema-cadastro-autenticacao-i23pjim4y.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type"]
 };
