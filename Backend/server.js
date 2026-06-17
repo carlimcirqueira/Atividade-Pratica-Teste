@@ -12,13 +12,19 @@ const app = express();
 app.use(express.json());
 
 
-app.use(cors({
-    origin: '*',
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"]
-}));
+//app.use(cors({
+    //origin: 'http://localhost:5173', // Permite apenas o frontend local
+//}));
 
-app.options(/.*/, cors());
+
+const corsOptions = {
+  origin: "https://atividade-pratica-sistema-cadastro.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type"]
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 app.use(routes);
 
