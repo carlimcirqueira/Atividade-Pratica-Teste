@@ -23,8 +23,18 @@ const corsOptions = {
   allowedHeaders: ["Content-Type"]
 };
 
+// 🔥 IMPORTANTE: isso garante resposta no preflight
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
+
+// garante headers antes das rotas
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", corsOptions.origin);
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
 
 app.use(routes);
 
