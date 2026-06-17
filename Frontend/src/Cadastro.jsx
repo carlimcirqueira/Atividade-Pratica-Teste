@@ -22,14 +22,14 @@ function Cadastro() {
 // 'http://localhost:3000/cadastro' quando for local 
 
     try {
-      const resposta = await axios.post('https://atividade-pratica-sistema-de-cadastro-e-r6qp.onrender.com/cadastro', dados);
+      const resposta = await axios.post('https://atividade-pratica-teste.onrender.com/cadastro', dados);
       setMensagem(resposta.data.mensagem); // Feedback de sucesso
     } catch (error) {
       // Requisito 5: Tratamento de Exceções claro
       if (error.response && error.response.data.erro) {
-         setErroAtivo(error.response.data.erro);
+        setErroAtivo(error.response.data.erro);
       } else {
-         setErroAtivo("Falha de comunicação: Não foi possível conectar ao servidor.");
+        setErroAtivo("Falha de comunicação: Não foi possível conectar ao servidor.");
       }
     }
   };
